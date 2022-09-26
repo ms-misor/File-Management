@@ -1,0 +1,10 @@
+"The requested URL was not found on this server." Even after setting up name servers and A record."
+
+
+"In case you are on Ubuntu, edit the file /etc/apache2/apache2.conf (here we have an example of /var/www):
+
+<Directory /var/www/> Options Indexes FollowSymLinks AllowOverride None Require all granted </Directory> and change it to;
+
+<Directory /var/www/> Options Indexes FollowSymLinks AllowOverride All Require all granted </Directory> then,
+
+sudo service apache2 restart You may need to also do sudo a2enmod rewrite to enable module rewrite."
