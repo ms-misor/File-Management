@@ -1,0 +1,61 @@
+Let us check the default installed version of PHP using command:
+
+php -v
+
+As you can see, the installed version of PHP is 8.1 :
+
+sudo add-apt-repository -y ppa:ondrej/php
+sudo apt update
+
+If not installed Php 7.4, Indtall It :
+
+sudo apt install php7.4
+
+
+1.1.1 First disable PHP 8.1 module using command:
+
+sudo a2dismod php8.1
+
+1.1.2. Next, enable PHP 7.4 module:
+
+sudo a2enmod php7.4
+
+1.1.3 Set PHP 7.4 as default version using command:
+
+sudo update-alternatives --set php /usr/bin/php7.4
+
+1.1.4. Alternatively, you can run the following command to set which system wide version of PHP you want to use by default.
+
+sudo update-alternatives --config php
+
+1.1.5. Enter the selection number to set it as default version or simply press ENTER to keep the current choice.
+
+1.1.6. If you have installed other PHP extensions, set them as default as well.
+
+sudo update-alternatives --set phar /usr/bin/phar7.4
+
+Finally, restart your Apache web server:
+
+sudo systemctl restart apache2
+
+Now, check if PHP 7.4 is the default version or not:
+
+php -v
+
+
+
+2. Switch from PHP 5.x to PHP 7.x
+
+Likewise, you can switch from PHP 5.x to PHP 7.x version by running the following commands one after another.
+
+sudo a2enmod php8.1
+sudo a2dismod php7.4
+sudo update-alternatives --set php /usr/bin/php8.1
+sudo systemctl restart apache2
+
+
+
+
+
+
+
